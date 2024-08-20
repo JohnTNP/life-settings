@@ -7,7 +7,6 @@ interface SettingItem {
 
 const mockSettings: SettingItem[] = [
   { name: "Profile" },
-  { name: "Settings" },
   { name: "Family" },
   { name: "Travel" },
 ];

@@ -1,7 +1,7 @@
 import { ThemeProvider } from '@/providers/theme-provider'
 import { Home } from '@/components/home'
-import { ModeToggle } from './components/theme-mode-toggle'
 import { AppStateProvider } from './providers/app-state-provider'
+import Navbar from './components/navbar'
 
 function App() {
 
@@ -9,7 +9,7 @@ function App() {
     <ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
       <AppStateProvider>
         <div className='w-full max-w-7xl gap-2 mx-auto items-center flex flex-col h-screen p-4 font-sans'>
-            <ModeToggle />
+            <Navbar />
             <Home />
         </div>
       </AppStateProvider>

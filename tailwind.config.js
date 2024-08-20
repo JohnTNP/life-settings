@@ -74,6 +74,9 @@ module.exports = {
     },
     fontFamily: {
       'sans': ['Inter', 'ui-sans-serif'],
+    },
+    transitionDuration: {
+      2000: "2000ms",
     }
   },
   plugins: [require("tailwindcss-animate")],
