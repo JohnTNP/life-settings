@@ -15,7 +15,7 @@ export function Home() {
                 </ResizablePanel>
                 <ResizableHandle />
                 <ResizablePanel>
-                    <DetailLayout title={state.title} />
+                    <DetailLayout title={state.selectedSetting.name} />
                 </ResizablePanel>
         </ResizablePanelGroup>
     )

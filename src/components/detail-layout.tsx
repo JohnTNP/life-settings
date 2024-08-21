@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { FreeForm } from "./free-form";
 
 interface DetailLayoutProps {
   title: string;
@@ -15,6 +16,7 @@ export function DetailLayout({ title }: DetailLayoutProps) {
         <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
           {title}
         </h1>
+        <FreeForm />
       </div>
     </motion.div>
   );

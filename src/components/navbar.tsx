@@ -10,7 +10,7 @@ export default function Navbar() {
     <header className="flex h-16 w-full items-center justify-between bg-background px-4 md:px-6">
       <span className="ml-2 text-xl font-semibold flex gap-4 items-center">
         <motion.div
-          key={state.selectedSetting}
+          key={state.selectedSetting.name}
           transition={{
             duration: 0.5,
           }}

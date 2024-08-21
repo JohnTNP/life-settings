@@ -1,12 +1,9 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { mockSettings } from "@/lib/mocks";
+import { AppState } from "@/lib/types";
+import { createContext, useContext, useState } from "react";
 
 type AppStateProviderProps = {
   children: React.ReactNode;
-};
-
-type AppState = {
-  selectedSetting: string;
-  title: string;
 };
 
 type AppStateProviderState = {
@@ -16,8 +13,8 @@ type AppStateProviderState = {
 
 const initialState: AppStateProviderState = {
   state: {
-    selectedSetting: "Untitled",
-    title: "Untitled",
+    settings: mockSettings,
+    selectedSetting: mockSettings[0],
   },
   setState: () => null,
 };
@@ -29,10 +26,6 @@ export function AppStateProvider({
   ...props
 }: AppStateProviderProps) {
   const [state, setState] = useState<AppState>(initialState.state);
-
-  useEffect(() => {
-    setState({ ...state, selectedSetting: state.title });
-  }, [state]);
 
   const value = {
     state,
@@ -48,6 +41,7 @@ export function AppStateProvider({
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useAppState = () => {
     const context = useContext(AppStateContext)
 
