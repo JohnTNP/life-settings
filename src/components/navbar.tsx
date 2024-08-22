@@ -14,7 +14,7 @@ export default function Navbar() {
           transition={{
             duration: 0.5,
           }}
-          animate={{ rotate: 180 }}
+          animate={state.updateDirection === 'up' ? { rotate: -180 } : { rotate: 180 }}
         >
           <Settings />
         </motion.div>

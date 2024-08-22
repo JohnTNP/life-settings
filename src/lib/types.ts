@@ -1,8 +1,10 @@
 export type AppState = {
   settings: SettingItem[]
-  selectedSetting: SettingItem;
-};
+  selectedSetting: SettingItem
+  updateDirection: 'up' | 'down'
+}
 
 export type SettingItem = {
-  name: string;
+  id: number
+  name: string
 }

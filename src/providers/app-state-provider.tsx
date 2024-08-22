@@ -15,6 +15,7 @@ const initialState: AppStateProviderState = {
   state: {
     settings: mockSettings,
     selectedSetting: mockSettings[0],
+    updateDirection: 'down',
   },
   setState: () => null,
 };
@@ -43,10 +44,10 @@ export function AppStateProvider({
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const useAppState = () => {
-    const context = useContext(AppStateContext)
+  const context = useContext(AppStateContext)
 
-    if (context === undefined)
-        throw new Error("useAppState must be used within a AppStateProvider")
+  if (context === undefined)
+      throw new Error("useAppState must be used within a AppStateProvider")
 
-    return context
+  return context
 }

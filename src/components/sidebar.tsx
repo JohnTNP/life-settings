@@ -6,7 +6,8 @@ export function Sidebar() {
   const { state, setState } = useAppState();
 
   function selectSetting(setting: SettingItem) {
-    setState({ ...state, selectedSetting: setting });
+    const direction = setting.id > state.selectedSetting.id ? 'down' : 'up';
+    setState({ ...state, selectedSetting: setting, updateDirection: direction });
   }
 
   function isTabSelected(setting: SettingItem) {
