@@ -2,6 +2,7 @@ import { Controller, useFieldArray, useForm } from "react-hook-form";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { toast } from "sonner";
+import { useAutoAnimate } from "@formkit/auto-animate/react"
 
 export function FreeForm() {
   const { control, handleSubmit, register } = useForm({});
@@ -9,6 +10,8 @@ export function FreeForm() {
     control,
     name: "freeForm",
   });
+
+  const [parentRef] = useAutoAnimate();
 
   function onSubmit() {
     toast.success("Fake Saved");
@@ -20,7 +23,7 @@ export function FreeForm() {
         onSubmit();
       })}
     >
-      <ul className="flex flex-col gap-2 my-4">
+      <ul className="flex flex-col gap-2 my-4" ref={parentRef}>
         {fields.map((item, index) => (
           <li key={item.id}>
             <div className="flex gap-4">
